@@ -19,5 +19,10 @@ pipeline {
                 echo 'This is a minimal pipeline.'
             }
         }
+         post {
+                success {
+                    junit 'target/surefire-reports/**/*.xml' 
+                }
+            }
     }
 }
